@@ -1,9 +1,22 @@
 """
-Дана строка чисел от 0 до 9 необходимо создать словарь где в качестве ключа будет цифра,
-а в качестве значения количество этих цифр в строке
+Имеется список с произвольными значениями. Нужно преобразовать его во множество и проверить
+являются ли все его элементы неизменяемыми.
+Вывести True или False. И изменяемые элементы
+Подсказка: чтобы узнать тип элемента можно использовать функцию type()
 """
-numbers = "0139412831055230677798"
-dict_of_num = dict()
-for i in range(0, 10):
-    dict_of_num[i] = numbers.count(str(i))
-print(dict_of_num)
+testList = [1,2,2,[3,4],(1,2,3),"1",{1,2,3}]
+printSet = set()
+result = []
+for i in testList:
+    if type(i) == list or type(i) == set or type(i) == dict:
+        result.append(i)
+if result == []:
+    print(True)
+else:
+    print(False)
+    print(result)
+
+
+
+
+

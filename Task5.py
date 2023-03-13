@@ -1,14 +1,27 @@
 """
-Дан словарь email-адресов студентов, в качестве ключа используется домен, а в качестве значения список имен.
-Необходимо вывести все email-адреса в формате Имя@домен.
+Каждый из N школьников некоторой школы знает M языков.
+Определите, какие языки знают все школьники и языки, которые знает хотя бы один из школьников.
+Входные данные:
+Сначала запрашивается количество учеников(например 6).
+Дальше запрашивается количество учеников знающих определенный набор языков и языки которые они знают
+Например:
+3
+Russian
+English
+Japanese
+2
+Russian
+English
+1
+English
+Вывод должен быть:
+3 - [Russian, English,Japenese]
+1 - [English]
 """
-emails = {'mgu.edu': ['andrei_serov', 'alexander_pushkin', 'elena_belova', 'kirill_stepanov'],
-      	'gmail.com': ['alena.semyonova', 'ivan.polekhin', 'marina_abrabova'],
-      	'msu.edu': ['sergei.zharkov', 'julia_lyubimova', 'vitaliy.smirnoff'],
-      	'yandex.ru': ['ekaterina_ivanova', 'glebova_nastya'],
-      	'harvard.edu': ['john.doe', 'mark.zuckerberg', 'helen_hunt'],
-      	'mail.ru': ['roman.kolosov', 'ilya_gromov', 'masha.yashkina']}
+plenty_union = set()
+plenty_intersection = set()
 
-for key, value in emails.items():
-    for i in value:
-        print(f"{key}@{i}")
+numberStudent = int(input())
+count = 0
+initial_iteration = True
+while numberStudent > count:
