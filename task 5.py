@@ -1,6 +1,9 @@
-number = int(input())
-if number % 2 == 0:
-    if sum(map(int,str(number))) % 3 == 0:
-        print("yes")
+number = input()
+number = [int(a) for a in number.split()]
+
+if len(number) == 1:
+    print('Нет')
+elif sorted(number) == number:
+    print('Да')
 else:
-    print("No")
+    print('Нет')
